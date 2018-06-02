@@ -1,0 +1,30 @@
+set pastetoggle=<F2>
+set number
+set t_Co=256
+syntax enable
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+" colorscheme wonka-dark
+set backspace=indent,eol,start
+
+set autoindent
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set hlsearch
+
+set nocompatible
+set showcmd
+set ignorecase
+set smartcase
+
+
+let g:airline_powerline_fonts = 1
+
+" Force tmux to use tmuxline colors from start
+let g:airline#extensions#tmuxline#enabled = 1
+let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
+
