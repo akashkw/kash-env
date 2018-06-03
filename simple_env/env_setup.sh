@@ -12,6 +12,6 @@ sudo apt-get install -y curl git vim tmux
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf
 
 # Create Config files
-cp simple_vimrc ~/.vimrc
-cp simple_tmux_conf ~/.tmux.conf
+cp vimrc ~/.vimrc
+cp tmux.conf ~/.tmux.conf
 

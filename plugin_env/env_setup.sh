@@ -34,6 +34,6 @@ mkdir -p ~/.config/fontconfig/conf.d
 mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
 # Create Config files
-cp plugin_vimrc ~/.vimrc
-cp plugin_tmux_conf ~/.tmux.conf
+cp vimrc ~/.vimrc
+cp tmux.conf ~/.tmux.conf
 
