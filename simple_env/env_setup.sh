@@ -5,8 +5,11 @@ SCRIPT_PATH=$(dirname $(readlink -f $0))
 cd $SCRIPT_PATH
 
 # Install dependencies
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y curl git vim tmux
+
+# Get newest config data
+git pull
 
 # Clear out old environment
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf
