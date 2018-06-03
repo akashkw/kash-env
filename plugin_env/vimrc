@@ -22,6 +22,7 @@ set showcmd
 set ignorecase
 set smartcase
 
+set ttimeoutlen=10
 
 let g:airline_powerline_fonts = 1
 
