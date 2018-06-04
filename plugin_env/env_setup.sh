@@ -61,3 +61,7 @@ git reset --hard dd4d4c7
 cd $SCRIPT_PATH
 # ------------------------------------------------------
 
+# Install NERDCommenter
+git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
+vim -u NONE -c "helptags ~/.vim/bundle/nerdcommenter/doc" -c q
+
