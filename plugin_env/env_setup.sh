@@ -54,3 +54,10 @@ vim -u NONE -c "helptags ~/.vim/bundle/tmuxline.vim/doc" -c q
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 vim -u NONE -c "helptags ~/.vim/bundle/vim-fugitive/doc" -c q
 
+# TEMPORARY REVERT UNTIL VIM_FUGITIVE BUGFIX IS RELEASED
+# ------------------------------------------------------
+cd ~/.vim/bundle/vim-fugitive
+git reset --hard dd4d4c7
+cd $SCRIPT_PATH
+# ------------------------------------------------------
+
