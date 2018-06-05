@@ -1,14 +1,14 @@
 set pastetoggle=<F2>
 set number
 set mouse=a
-set t_Co=256
+set termguicolors
 syntax enable
 
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" colorscheme wonka-dark
+colorscheme wonka-dark 
 set backspace=indent,eol,start
 
 set autoindent
