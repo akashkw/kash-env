@@ -13,11 +13,16 @@ sudo apt-get install -y curl git vim tmux fish
 git pull
 
 # Clear out old environment
-rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish
+rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
 
 # Initialize Fish
 chsh -s /usr/bin/fish
 mkdir -p ~/.config/fish
+
+# Initialize Oh My Fish
+#curl -L https://get.oh-my.fish > install
+#fish install --path=~/.local/share/omf --config=~/.config/omf
+#rm install
 
 # Set primary editor to vim in bashrc
 sed -i '/export VISUAL/d' ~/.bashrc
