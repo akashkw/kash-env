@@ -16,7 +16,7 @@ git pull
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish
 
 # Initialize Fish
-sudo chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish
 mkdir -p ~/.config/fish
 
 # Set primary editor to vim in bashrc
