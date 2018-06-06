@@ -16,7 +16,9 @@ git pull
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
 
 # Initialize Fish
-chsh -s /usr/bin/fish
+if [ "$SHELL" != "/usr/bin/fish" ]; then
+    chsh -s /usr/bin/fish
+fi
 mkdir -p ~/.config/fish
 
 # Initialize Oh My Fish
