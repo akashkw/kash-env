@@ -1,7 +1,13 @@
 #!/bin/bash
 
+TARGET="'Hybrid'"
+
 DCONF_GTERM_PROFILE="/org/gnome/terminal/legacy/profiles:"
 
-profiles=( $ (dconf list "$DGP/" | grep : | cut -c 2-37) )
+dconf list "$DCONF_GTERM_PROFILE/" | grep : | cut -c 2-37 | while read -r PID ; do
+    NAME=$(dconf read "$DCONF_GTERM_PROFILE/:$PID/visible-name")
+    if [ $NAME == $TARGET ]; then
+        dconf write "$DCONF_GTERM_PROFILE/default" "'$PID'"
+    fi
+done
 
-#dconf write "$DCONF_GTERM_PROFILEdefault" "'35a2c209-987b-4a7e-a2cf-2429e89c8e59'"
