@@ -7,7 +7,7 @@ cd $SCRIPT_PATH
 # Install dependencies
 sudo apt-add-repository -y ppa:fish-shell/release-2
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y curl git vim tmux fish
+sudo apt-get install -y curl git vim tmux fish dconf-cli
 
 # Get newest config data
 git pull
@@ -35,6 +35,19 @@ git config --global core.editor "vim"
 cp vimrc ~/.vimrc
 cp tmux.conf ~/.tmux.conf
 cp config.fish ~/.config/fish/
+
+# Get Hybrid Gnome-Terminal Profile
+wget -O xt  http://git.io/v3D4d && chmod +x xt && ./xt && rm xt
+
+# Set Default Gnome-Terminal Profile
+TARGET="'Hybrid'"
+DCONF_GTERM_PROFILE="/org/gnome/terminal/legacy/profiles:"
+dconf list "$DCONF_GTERM_PROFILE/" | grep : | cut -c 2-37 | while read -r PID ; do
+    NAME=$(dconf read "$DCONF_GTERM_PROFILE/:$PID/visible-name")
+    if [ $NAME == $TARGET ]; then
+        dconf write "$DCONF_GTERM_PROFILE/default" "'$PID'"
+    fi
+done
 
 # Install Powerline Fonts
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
