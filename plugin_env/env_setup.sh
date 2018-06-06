@@ -37,14 +37,14 @@ cp tmux.conf ~/.tmux.conf
 cp config.fish ~/.config/fish/
 
 # Get Hybrid Gnome-Terminal Profile
-wget -O xt  http://git.io/v3D4d && chmod +x xt && ./xt && rm xt
+wget -O xt  http://git.io/v7eBS && chmod +x xt && ./xt && rm xt
 
 # Set Default Gnome-Terminal Profile
-TARGET="'Hybrid'"
+TARGET="'Gruvbox Dark'"
 DCONF_GTERM_PROFILE="/org/gnome/terminal/legacy/profiles:"
 dconf list "$DCONF_GTERM_PROFILE/" | grep : | cut -c 2-37 | while read -r PID ; do
     NAME=$(dconf read "$DCONF_GTERM_PROFILE/:$PID/visible-name")
-    if [ $NAME == $TARGET ]; then
+    if [ "$NAME" == "$TARGET" ]; then
         dconf write "$DCONF_GTERM_PROFILE/default" "'$PID'"
     fi
 done
