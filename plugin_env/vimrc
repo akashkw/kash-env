@@ -9,19 +9,18 @@ syntax on
 filetype plugin indent on
 
 colorscheme wonka-dark 
-set backspace=indent,eol,start
 
-set autoindent
+set nocompatible
+set hlsearch
+set incsearch
 set expandtab
 set shiftwidth=4
 set tabstop=4
-set hlsearch
-
-set nocompatible
 set showcmd
+set autoindent
 set ignorecase
 set smartcase
-
+set backspace=indent,eol,start
 set ttimeoutlen=10
 
 let g:airline_powerline_fonts = 1
