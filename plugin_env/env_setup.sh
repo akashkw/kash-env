@@ -26,6 +26,7 @@ curl -L https://get.oh-my.fish > install
 fish install --noninteractive --yes --path=~/.local/share/omf --config=~/.config/omf
 rm install
 fish -c "omf install bobthefish"
+fish -c "omf update"
 
 # Set primary editor to vim in bashrc
 sed -i '/export VISUAL/d' ~/.bashrc
@@ -34,15 +35,15 @@ sed -i '/export EDITOR/d' ~/.bashrc
 echo export EDITOR=vim >> ~/.bashrc
 git config --global core.editor "vim"
 
-# Create Config files
+# Create config files
 cp vimrc ~/.vimrc
 cp tmux.conf ~/.tmux.conf
 cp config.fish ~/.config/fish/
 
-# Get Hybrid Gnome-Terminal Profile
+# Install Gruvbox Dark gnome-terminal profile
 wget -O xt  http://git.io/v7eBS && chmod +x xt && ./xt && rm xt
 
-# Set Default Gnome-Terminal Profile
+# Set default gnome-terminal profile
 TARGET="'Gruvbox Dark'"
 DCONF_GTERM_PROFILE="/org/gnome/terminal/legacy/profiles:"
 DUPLICATE=false
@@ -54,11 +55,20 @@ dconf list "$DCONF_GTERM_PROFILE/" | grep : | cut -c 2-37 | while read -r PID ; 
             DUPLICATE=true
         else
             dconf reset -f "$DCONF_GTERM_PROFILE/:$PID/"
+            LIST=`dconf read "$DCONF_GTERM_PROFILE/list"`
+            NEWLIST=`python <<END
+array = $LIST
+array.remove($PID)
+print(array)
+END`
+            echo $NEWLIST
+            sleep 10
+            dconf write "$DCONF_GTERM_PROFILE/:list" "$NEWLIST"
         fi
     fi
 done
 
-# Install Powerline Fonts
+# Install powerline fonts
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 mkdir ~/.fonts
 mv PowerlineSymbols.otf ~/.fonts/
@@ -67,39 +77,39 @@ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbol
 mkdir -p ~/.config/fontconfig/conf.d
 mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
-# Install Pathogen
+# Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# Install Color Schemes
+# Install colorschemes
 git clone  https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes
 curl https://raw.githubusercontent.com/nightsense/wonka/master/colors/wonka-dark.vim > ~/.vim/bundle/colorschemes/colors/wonka-dark.vim
 
-# Install Airline
+# Install airline
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 vim -u NONE -c "helptags ~/.vim/bundle/vim-airline/doc" -c q
 
-# Install Airline Themes
+# Install airline-themes
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 vim -u NONE -c "helptags ~/.vim/bundle/vim-airline-themes/doc" -c q
 
-# Install Tmux Airline
+# Install tmuxline
 git clone https://github.com/edkolev/tmuxline.vim ~/.vim/bundle/tmuxline.vim
 vim -u NONE -c "helptags ~/.vim/bundle/tmuxline.vim/doc" -c q
 
-# Install Fugitive
+# Install fugitive
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 vim -u NONE -c "helptags ~/.vim/bundle/vim-fugitive/doc" -c q
 
-# Install NERDCommenter
+# Install nerdcommenter
 git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 vim -u NONE -c "helptags ~/.vim/bundle/nerdcommenter/doc" -c q
 
-# Install Syntastic
+# Install syntastic
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 vim -u NONE -c "helptags ~/.vim/bundle/syntastic/doc" -c q
 
-# Install Easymotion
+# Install easymotion
 git clone https://github.com/easymotion/vim-easymotion ~/.vim/bundle/vim-easymotion
 vim -u NONE -c "helptags ~/.vim/bundle/vim-easymotion/doc" -c q
 
