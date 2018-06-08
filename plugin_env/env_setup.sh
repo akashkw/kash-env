@@ -89,8 +89,13 @@ vim -u NONE -c "helptags ~/.vim/bundle/vim-fugitive/doc" -c q
 git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 vim -u NONE -c "helptags ~/.vim/bundle/nerdcommenter/doc" -c q
 
+# Install Syntastic
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 vim -u NONE -c "helptags ~/.vim/bundle/syntastic/doc" -c q
+
+# Install Easymotion
+git clone https://github.com/easymotion/vim-easymotion ~/.vim/bundle/vim-easymotion
+vim -u NONE -c "helptags ~/.vim/bundle/vim-easymotion/doc" -c q
 
 # Logout to reset terminal
 gnome-session-quit --force
