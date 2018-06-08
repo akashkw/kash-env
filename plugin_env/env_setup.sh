@@ -23,8 +23,9 @@ mkdir -p ~/.config/fish
 
 # Initialize Oh My Fish
 #curl -L https://get.oh-my.fish > install
-#fish install --path=~/.local/share/omf --config=~/.config/omf
+#fish install --noninteractive --path=~/.local/share/omf --config=~/.config/omf
 #rm install
+#gnome-terminal -e "omf install bobthefish"
 
 # Set primary editor to vim in bashrc
 sed -i '/export VISUAL/d' ~/.bashrc
@@ -91,3 +92,5 @@ vim -u NONE -c "helptags ~/.vim/bundle/nerdcommenter/doc" -c q
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 vim -u NONE -c "helptags ~/.vim/bundle/syntastic/doc" -c q
 
+# Logout to reset terminal
+gnome-session-quit --force
