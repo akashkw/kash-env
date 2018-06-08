@@ -22,10 +22,10 @@ fi
 mkdir -p ~/.config/fish
 
 # Initialize Oh My Fish
-#curl -L https://get.oh-my.fish > install
-#fish install --noninteractive --path=~/.local/share/omf --config=~/.config/omf
-#rm install
-#gnome-terminal -e "omf install bobthefish"
+curl -L https://get.oh-my.fish > install
+fish install --noninteractive --yes --path=~/.local/share/omf --config=~/.config/omf
+rm install
+fish -c "omf install bobthefish"
 
 # Set primary editor to vim in bashrc
 sed -i '/export VISUAL/d' ~/.bashrc
@@ -45,10 +45,16 @@ wget -O xt  http://git.io/v7eBS && chmod +x xt && ./xt && rm xt
 # Set Default Gnome-Terminal Profile
 TARGET="'Gruvbox Dark'"
 DCONF_GTERM_PROFILE="/org/gnome/terminal/legacy/profiles:"
+DUPLICATE=false
 dconf list "$DCONF_GTERM_PROFILE/" | grep : | cut -c 2-37 | while read -r PID ; do
     NAME=$(dconf read "$DCONF_GTERM_PROFILE/:$PID/visible-name")
     if [ "$NAME" == "$TARGET" ]; then
-        dconf write "$DCONF_GTERM_PROFILE/default" "'$PID'"
+        if [ "$DUPLICATE" == false ]; then
+            dconf write "$DCONF_GTERM_PROFILE/default" "'$PID'"
+            DUPLICATE=true
+        else
+            dconf reset -f "$DCONF_GTERM_PROFILE/:$PID/"
+        fi
     fi
 done
 
