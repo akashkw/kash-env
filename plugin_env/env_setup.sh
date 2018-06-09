@@ -56,14 +56,12 @@ dconf list "$DCONF_GTERM_PROFILE/" | grep : | cut -c 2-37 | while read -r PID ; 
         else
             dconf reset -f "$DCONF_GTERM_PROFILE/:$PID/"
             LIST=`dconf read "$DCONF_GTERM_PROFILE/list"`
-            NEWLIST=`python <<END
+            NEWLIST="`python <<END
 array = $LIST
-array.remove($PID)
+array.remove('$PID')
 print(array)
-END`
-            echo $NEWLIST
-            sleep 10
-            dconf write "$DCONF_GTERM_PROFILE/:list" "$NEWLIST"
+END`"
+            dconf write "$DCONF_GTERM_PROFILE/list" "$NEWLIST"
         fi
     fi
 done
