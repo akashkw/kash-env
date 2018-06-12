@@ -1,0 +1,20 @@
+set pastetoggle=<F2>
+set number
+set mouse=a
+syntax on
+filetype plugin indent on
+set backspace=indent,eol,start
+
+set autoindent
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set incsearch
+set hlsearch
+
+set nocompatible
+set showcmd
+set ignorecase
+set smartcase
+
+color industry
