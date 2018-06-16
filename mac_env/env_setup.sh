@@ -13,7 +13,7 @@ brew install git curl wget tmux fish
 git pull
 
 # Clear out old environment
-rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
+sudo rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
 
 # Initialize Oh My Fish
 curl -L https://get.oh-my.fish > install
@@ -22,10 +22,17 @@ rm install
 fish -c "omf install bobthefish"
 fish -c "omf update"
 
-sudo echo /usr/local/bin/fish >> /etc/shells
+sudo sed -i '/usr/local/bin/fish/d' /etc/shells
+sudo sh -c "echo /usr/local/bin/fish >> /etc/shells"
 
 # Initialize Fish
 if [ "$SHELL" != "/usr/local/bin/fish" ]; then
     chsh -s /usr/local/bin/fish
 fi
 
+git config --global core.editor "vim"
+
+# Create config files
+cp vimrc ~/.vimrc
+cp tmux.conf ~/.tmux.conf
+cp config.fish ~/.config/fish/
