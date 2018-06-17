@@ -1,4 +1,13 @@
 #!/bin/bash
+
+
+# TODO
+# Integrate powerline fonts
+# Get vim plugins
+# Get color scheme for vim and iterm
+
+
+
 set -x
 SCRIPT_PATH=$(cd "$(dirname "$0")"; pwd)
 cd $SCRIPT_PATH
