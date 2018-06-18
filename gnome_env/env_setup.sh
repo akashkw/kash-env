@@ -15,7 +15,7 @@ git pull
 # Clear out old environment
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
 
-# Initialize Fish
+# Set fish to default shell
 if [ "$SHELL" != "/usr/bin/fish" ]; then
     chsh -s /usr/bin/fish
 fi
@@ -28,17 +28,13 @@ rm install
 fish -c "omf install bobthefish"
 fish -c "omf update"
 
-# Set primary editor to vim in bashrc
-sed -i '/export VISUAL/d' ~/.bashrc
-echo export VISUAL=vim >> ~/.bashrc
-sed -i '/export EDITOR/d' ~/.bashrc
-echo export EDITOR=vim >> ~/.bashrc
-git config --global core.editor "vim"
-
 # Create config files
 cp vimrc ~/.vimrc
 cp tmux.conf ~/.tmux.conf
 cp config.fish ~/.config/fish/
+
+# Set primary editor to vim in git
+git config --global core.editor "vim"
 
 # Install Gruvbox Dark gnome-terminal profile
 wget -O xt  http://git.io/v7eBS && chmod +x xt && ./xt && rm xt
