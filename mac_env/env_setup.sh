@@ -1,8 +1,8 @@
-#!/bin/bash
+#
+/bin/bash
 
 
 # TODO
-# Integrate powerline fonts
 # Get vim plugins
 # Get color scheme for vim and iterm
 
@@ -45,3 +45,7 @@ git config --global core.editor "vim"
 cp vimrc ~/.vimrc
 cp tmux.conf ~/.tmux.conf
 cp config.fish ~/.config/fish/
+
+git clone https://github.com/powerline/fonts
+bash fonts/install.sh
+sudo rm -rf fonts
