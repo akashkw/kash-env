@@ -1,12 +1,8 @@
-#
-/bin/bash
+#!/bin/bash
 
 
 # TODO
 # Get vim plugins
-# Get color scheme for vim and iterm
-
-
 
 set -x
 SCRIPT_PATH=$(cd "$(dirname "$0")"; pwd)
@@ -49,3 +45,6 @@ cp config.fish ~/.config/fish/
 git clone https://github.com/powerline/fonts
 bash fonts/install.sh
 sudo rm -rf fonts
+
+sudo rm ~/Library/Preferences/com.googlecode.iterm2.plist
+sudo cp com.googlecode.iterm2.plist ~/Library/Preferences
