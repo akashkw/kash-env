@@ -56,7 +56,6 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Install colorschemes
 git clone  https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes
-curl https://raw.githubusercontent.com/nightsense/wonka/master/colors/wonka-dark.vim > ~/.vim/bundle/colorschemes/colors/wonka-dark.vim
 
 # Install airline
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
@@ -87,5 +86,4 @@ git clone https://github.com/easymotion/vim-easymotion ~/.vim/bundle/vim-easymot
 vim -u NONE -c "helptags ~/.vim/bundle/vim-easymotion/doc" -c q
 
 # Log out
-killall iTerm2 Terminal
-sudo pkill loginwindow
+osascript -e 'tell application "loginwindow" to  «event aevtrlgo»'
