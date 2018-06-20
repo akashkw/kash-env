@@ -4,7 +4,6 @@ set -x
 SCRIPT_PATH=$(dirname $(readlink -f $0))
 cd $SCRIPT_PATH
 
-
 # Install dependencies
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
