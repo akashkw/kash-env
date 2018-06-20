@@ -24,6 +24,7 @@ set smartcase
 set backspace=indent,eol,start
 set ttimeoutlen=10
 
+let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_embers'
 
 " Force tmux to use tmuxline colors from start
