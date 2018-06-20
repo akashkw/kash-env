@@ -11,7 +11,7 @@ yes "" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebr
 # Install dependencies
 brew update && brew upgrade
 brew cask install iterm2 google-cloud-sdk
-brew install git curl wget tmux fish
+brew install git vim curl wget tmux fish
 
 # Get newest config data
 git pull
@@ -56,6 +56,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Install colorschemes
 git clone  https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes
+curl https://raw.githubusercontent.com/nightsense/wonka/master/colors/wonka-dark.vim > ~/.vim/bundle/colorschemes/colors/wonka-dark.vim
 
 # Install airline
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline

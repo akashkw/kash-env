@@ -2,6 +2,7 @@ set pastetoggle=<F2>
 set number
 set mouse=a
 syntax enable
+set termguicolors
 
 execute pathogen#infect()
 syntax on
