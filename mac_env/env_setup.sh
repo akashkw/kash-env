@@ -10,7 +10,7 @@ yes "" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebr
 
 # Install dependencies
 brew update && brew upgrade
-brew cask install iterm2
+brew cask install iterm2 google-cloud-sdk
 brew install git curl wget tmux fish
 
 # Get newest config data
