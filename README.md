@@ -3,8 +3,8 @@
 A project designed to automate environment setup in various settings
 
 Currently Supported Environments:
-Gnome - Debian
-Mac OS
-Server - Custom client
+Debian - Gnome Terminal
+Mac OS - iTerm2
+Server - Custom client (Gnome Terminal or iTerm2)
 Server - Standard client
 
