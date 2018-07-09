@@ -25,6 +25,7 @@ set backspace=indent,eol,start
 set ttimeoutlen=10
 
 nnoremap <leader>r :w<Enter>:!%:p<Enter>
+nnoremap <leader>t :w<Enter>:!bash<Enter>
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_embers'
