@@ -25,4 +25,7 @@ set ttimeoutlen=10
 
 nnoremap <leader>r :w<Enter>:!%:p<Enter>
 nnoremap <leader>t :w<Enter>:!bash<Enter>
+nnoremap <leader>w :w<Enter>
+nnoremap <leader>n :noh<Enter>
+nnoremap <leader>s :%s/
 
