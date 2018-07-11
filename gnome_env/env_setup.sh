@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -x
 
 SCRIPT_PATH=$(dirname $(readlink -f $0))
@@ -39,40 +40,15 @@ cp config.fish ~/.config/fish/
 # Set primary editor to vim in git
 git config --global core.editor "vim"
 
-# Install Gruvbox Dark gnome-terminal profile
-wget -O xt  http://git.io/v7eBS && chmod +x xt && ./xt && rm xt
-
-# Set default gnome-terminal profile
-TARGET="'Gruvbox Dark'"
-DCONF_GTERM_PROFILE="/org/gnome/terminal/legacy/profiles:"
-DUPLICATE=false
-dconf list "$DCONF_GTERM_PROFILE/" | grep : | cut -c 2-37 | while read -r PID ; do
-    NAME=$(dconf read "$DCONF_GTERM_PROFILE/:$PID/visible-name")
-    if [ "$NAME" == "$TARGET" ]; then
-        if [ "$DUPLICATE" == false ]; then
-            dconf write "$DCONF_GTERM_PROFILE/default" "'$PID'"
-            DUPLICATE=true
-        else
-            dconf reset -f "$DCONF_GTERM_PROFILE/:$PID/"
-            LIST=`dconf read "$DCONF_GTERM_PROFILE/list"`
-            NEWLIST="`python <<END
-array = $LIST
-array.remove('$PID')
-print(array)
-END`"
-            dconf write "$DCONF_GTERM_PROFILE/list" "$NEWLIST"
-        fi
-    fi
-done
+# Load gnome terminal settings from dconf database
+filename="org.gnome.terminal.dump"
+db_location="/$(echo "${filename%.dump}" | tr '.' '/')/"
+dconf load "$db_location" < "$filename"
 
 # Install powerline fonts
-wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-mkdir ~/.fonts
-mv PowerlineSymbols.otf ~/.fonts/
-fc-cache -vf ~/.fonts/
-wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-mkdir -p ~/.config/fontconfig/conf.d
-mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+git clone https://github.com/powerline/fonts
+bash fonts/install.sh
+sudo rm -rf fonts
 
 # Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle
