@@ -25,7 +25,7 @@ if [ "$SHELL" != "/usr/local/bin/fish" ]; then
 fi
 
 # Initialize Oh My Fish
-curl -L https://get.oh-my.fish > install
+curl -L http://get.oh-my.fish > install
 fish install --noninteractive --yes --path=~/.local/share/omf --config=~/.config/omf
 rm install
 fish -c "omf install bobthefish"
