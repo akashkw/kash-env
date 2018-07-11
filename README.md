@@ -3,7 +3,7 @@
 A project designed to automate environment setup in various settings
 To my own tastes of course
 
-##Currently Supported Environments
+## Currently Supported Environments
 Debian - Gnome Terminal
 ```Shell
 ./env_setup -g
