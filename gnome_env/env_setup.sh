@@ -13,9 +13,6 @@ sudo apt-add-repository -y ppa:fish-shell/release-2
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y curl git vim tmux fish dconf-cli apt-transport-https google-cloud-sdk
 
-# Get newest config data
-git pull
-
 # Clear out old environment
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
 

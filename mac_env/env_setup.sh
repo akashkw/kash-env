@@ -14,9 +14,6 @@ brew cask install iterm2
 brew cask install google-cloud-sdk
 brew install git vim curl wget tmux fish
 
-# Get newest config data
-git pull
-
 # Clear out old environment
 sudo rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
 

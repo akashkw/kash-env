@@ -8,9 +8,6 @@ cd $SCRIPT_PATH
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y curl git vim tmux apt-transport-https 
 
-# Get newest config data
-git pull
-
 # Clear out old environment
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf 
 
