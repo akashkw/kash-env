@@ -29,6 +29,8 @@ nnoremap <leader>t :w<Enter>:sh<Enter>
 nnoremap <leader>w :w<Enter>
 nnoremap <leader>n :noh<Enter>
 nnoremap <leader>s :%s/
+nnoremap <leader>F ][zf%
+nnoremap <leader>f za
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_embers'
