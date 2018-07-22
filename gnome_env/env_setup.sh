@@ -7,6 +7,7 @@ cd $SCRIPT_PATH
 
 # Install dependencies
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+sudo sed -i "/deb http:\/\/packages.cloud.google.com\/apt $CLOUD_SDK_REPO main/d" /etc/apt/sources.list.d/google-cloud-sdk.list
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl http://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-add-repository -y ppa:fish-shell/release-2
