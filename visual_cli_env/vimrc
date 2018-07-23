@@ -32,8 +32,12 @@ nnoremap <leader>s :%s/
 nnoremap <leader>F ][zf%
 nnoremap <leader>f za
 
+" Vim airline color scheme
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_embers'
+
+" Python 3 syntax highlighting
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " Force tmux to use tmuxline colors from start
 let g:airline#extensions#tmuxline#enabled = 1
