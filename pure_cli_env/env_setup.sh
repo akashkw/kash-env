@@ -6,7 +6,9 @@ cd $SCRIPT_PATH
 
 # Install dependencies
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y curl git vim tmux apt-transport-https 
+sudo apt-get install -y curl git vim tmux apt-transport-https python3-pip
+sudo -H pip3 install pylint
+sudo -H pip3 install --upgrade pip
 
 # Clear out old environment
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf 

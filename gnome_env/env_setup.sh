@@ -12,7 +12,9 @@ echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee 
 curl http://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-add-repository -y ppa:fish-shell/release-2
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y curl git vim tmux fish dconf-cli apt-transport-https google-cloud-sdk
+sudo apt-get install -y curl git vim tmux fish dconf-cli apt-transport-https google-cloud-sdk python3-pip
+sudo -H pip3 install pylint
+sudo -H pip3 install --upgrade pip
 
 # Clear out old environment
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
