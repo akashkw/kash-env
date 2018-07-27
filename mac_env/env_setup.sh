@@ -14,8 +14,8 @@ brew cask install iterm2
 brew cask install google-cloud-sdk
 brew install git vim curl wget tmux fish python3
 brew link --overwrite python
-sudo -H pip3 install pylint
 sudo -H pip3 install --upgrade pip
+sudo -H pip3 install pylint
 
 # Clear out old environment
 sudo rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
