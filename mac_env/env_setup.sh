@@ -22,7 +22,7 @@ sudo rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.co
 
 # Set fish to default shell
 if [ "$SHELL" != "/usr/local/bin/fish" ]; then
-    sudo sed -i '/usr/local/bin/fish/d' /etc/shells
+    sudo sed -i '\_/usr/local/bin/fish/_d' /etc/shells
     sudo sh -c "echo /usr/local/bin/fish >> /etc/shells"
     chsh -s /usr/local/bin/fish
 fi
