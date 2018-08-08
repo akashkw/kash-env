@@ -1,4 +1,4 @@
-# kash_env
+# kash-env
 
 A project designed to automate environment setup in various settings
 
