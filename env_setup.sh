@@ -21,9 +21,9 @@ git pull
 
 while getopts "gmvp" option; do
     case "${option}" in
-        g ) sh gnome_env/env_setup.sh ;;
-        m ) sh mac_env/env_setup.sh;;
-        v ) sh visual_cli_env/env_setup.sh;;
-        p ) sh pure_cli_env/env_setup.sh;;
+        g ) sh gnome-env/env_setup.sh ;;
+        m ) sh mac-env/env_setup.sh;;
+        v ) sh visual-cli-env/env_setup.sh;;
+        p ) sh pure-cli-env/env_setup.sh;;
     esac
 done
