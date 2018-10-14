@@ -30,6 +30,7 @@ nnoremap <leader>n :noh<Enter>
 nnoremap <leader>s :%s/
 nnoremap <leader>F ][zf%
 nnoremap <leader>f za
+nnoremap <leader>c :so ~/.vimrc
 
 " Vim airline color scheme
 let g:airline_powerline_fonts = 1

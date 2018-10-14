@@ -30,4 +30,5 @@ nnoremap <leader>n :noh<Enter>
 nnoremap <leader>s :%s/
 nnoremap <leader>F ][zf%
 nnoremap <leader>f za
+nnoremap <leader>c :so ~/.vimrc
 
