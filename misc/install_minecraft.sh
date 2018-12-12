@@ -8,8 +8,8 @@ cd /tmp
 
 sudo wget https://launcher.mojang.com/download/Minecraft.deb 
 sudo dpkg -i Minecraft.deb
-sudo apt-get install -f
+sudo apt-get install -f -y
 sudo rm Minecraft.deb
-minecraft
+minecraft-launcher
 
 
