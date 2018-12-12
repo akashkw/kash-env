@@ -6,9 +6,10 @@ SCRIPT_PATH=$(dirname $(readlink -f $0))
 cd $SCRIPT_PATH
 cd /tmp
 
-sudo wget https://launcher.mojang.com/download/Minecraft.dmg
-sudo dpkg Minecraft.dmg
-sudo rm Minecraft.dmg
+sudo wget https://launcher.mojang.com/download/Minecraft.deb 
+sudo dpkg -i Minecraft.deb
+sudo apt-get install -f
+sudo rm Minecraft.deb
 minecraft
 
 
