@@ -19,11 +19,12 @@ cd $SCRIPT_PATH
 
 git pull
 
-while getopts "gmvp" option; do
+while getopts "gmvps" option; do
     case "${option}" in
         g ) sh gnome-env/env_setup.sh ;;
         m ) sh mac-env/env_setup.sh;;
         v ) sh visual-cli-env/env_setup.sh;;
         p ) sh pure-cli-env/env_setup.sh;;
+        s ) sh sudoless-env/env_setup.sh;;
     esac
 done

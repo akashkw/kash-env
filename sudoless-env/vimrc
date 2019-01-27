@@ -1,0 +1,45 @@
+set pastetoggle=<F2>
+set number
+set mouse=a
+set termguicolors
+syntax enable
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+colorscheme wonka-dark 
+
+set nocompatible
+set hlsearch
+set incsearch
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set showcmd
+set autoindent
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+set ttimeoutlen=10
+
+nnoremap <leader>r :w<Enter>:!%:p<Enter>
+nnoremap <leader>t :w<Enter>:sh<Enter>
+nnoremap <leader>w :w<Enter>
+nnoremap <leader>n :noh<Enter>
+nnoremap <leader>s :%s/
+nnoremap <leader>F ][zf%
+nnoremap <leader>f za
+nnoremap <leader>c :so ~/.vimrc<Enter>:noh<Enter>
+
+" Vim airline color scheme
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_embers'
+
+" Python 3 syntax highlighting
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+" Force tmux to use tmuxline colors from start
+let g:airline#extensions#tmuxline#enabled = 1
+let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
+
