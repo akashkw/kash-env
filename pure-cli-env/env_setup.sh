@@ -6,7 +6,7 @@ cd $SCRIPT_PATH
 
 # Install dependencies
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y curl git vim tmux apt-transport-https python3-pip silversearcher-ag default-jdk
+sudo apt-get install -y curl git vim tmux apt-transport-https python3-pip silversearcher-ag default-jdk ctags
 sudo apt-get autoremove -y
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install pylint

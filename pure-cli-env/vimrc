@@ -32,3 +32,5 @@ nnoremap <leader>F ][zf%
 nnoremap <leader>f za
 nnoremap <leader>c :so ~/.vimrc<Enter>:noh<Enter>
 
+set tags=tags;/
+

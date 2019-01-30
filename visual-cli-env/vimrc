@@ -33,6 +33,8 @@ nnoremap <leader>F ][zf%
 nnoremap <leader>f za
 nnoremap <leader>c :so ~/.vimrc<Enter>:noh<Enter>
 
+set tags=tags;/
+
 " Vim airline color scheme
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_embers'

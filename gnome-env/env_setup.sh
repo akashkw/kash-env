@@ -10,7 +10,7 @@ CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 curl http://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-add-repository -y ppa:fish-shell/release-2
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y curl git vim tmux fish dconf-cli apt-transport-https google-cloud-sdk python3-pip xclip silversearcher-ag default-jdk
+sudo apt-get install -y curl git vim tmux fish dconf-cli apt-transport-https google-cloud-sdk python3-pip xclip silversearcher-ag default-jdk ctags
 sudo apt-get autoremove -y
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install pylint

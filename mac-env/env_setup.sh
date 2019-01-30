@@ -12,7 +12,7 @@ yes "" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebr
 brew update && brew upgrade
 brew cask install iterm2
 brew cask install google-cloud-sdk
-brew install git vim curl wget tmux fish python3
+brew install git vim curl wget tmux fish python3 ctags
 brew link --overwrite python
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install pylint
