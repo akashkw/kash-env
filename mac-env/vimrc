@@ -38,6 +38,8 @@ set tags=tags;/
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_embers'
 
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
+
 " Python 3 syntax highlighting
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 
