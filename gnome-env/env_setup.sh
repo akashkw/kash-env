@@ -6,14 +6,11 @@ SCRIPT_PATH=$(dirname $(readlink -f $0))
 cd $SCRIPT_PATH
 
 # Install dependencies
-CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-curl http://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-add-repository -y ppa:fish-shell/release-2
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y curl git vim tmux fish dconf-cli apt-transport-https google-cloud-sdk python3-pip xclip silversearcher-ag default-jdk ctags
+sudo apt-get install -y curl git vim tmux fish dconf-cli apt-transport-https python3-pip xclip silversearcher-ag default-jdk ctags
 sudo apt-get autoremove -y
 sudo -H pip3 install --upgrade pip
-sudo -H pip3 install pylint
 
 # Clear out old environment
 rm -rf ~/.vim ~/.vimrc ~/.tmux.conf ~/.config/fish ~/.local/share/omf ~/.config/omf ~/.cache/omf
