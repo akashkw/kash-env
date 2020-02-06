@@ -1,4 +1,4 @@
-set -g -x PATH /usr/local/bin $PATH
+set -gx PATH $PATH /usr/local/bin
 set -Ux EDITOR vim
 set -Ux VISUAL vim
 set -U fish_greeting ""
